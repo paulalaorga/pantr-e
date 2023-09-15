@@ -50,14 +50,17 @@ Finally, it returns the recipe item.
                 - Menu
                                 1- to select recipes:
 - checks if the recipe is not already in the selectedRecipes array. 
-it pushes (adds) the recipe object to the selectedRecipes array using selectedRecipes.push(recipe). This array (selectedRecipes) stores all the selected recipes.
-calls two functions:
-displaySelectedRecipes(): This function updates the "My Menu" list to display the selected recipes.
-displayIngredients(recipe): This function likely displays the ingredients of the selected recipe.
+Using .push, adds the recipe onject to the array
+calls the function to display the list and the ingredients
 
                                 2- to display the selected recipes:
-
+- Runs a forEach loop on the selectedRecipes array calling a variable for the individual itemsof the list and iterating the function createRecipeList, then append the list item as a child to the selectedRecipeList.
 
                 - Ingredients
+
+- Extract ingredients (properties) from the recipe (objects).
+- Create and display list
     
                 - Shopping List
+- .push ingredients to the shoppingListItems array
+- .forEach to iterate through the array and append the items to the variable shoppingList.
