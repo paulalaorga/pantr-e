@@ -1,6 +1,19 @@
 //Fetch API
+const apiKey = '1';
 
+async function fetchRecipes(query) {
+    try {
+        const data = await fetchData(`https://www.themealdb.com/api/json/v1/1/search.php?s=${query}&apiKey=${apiKey}`);
+        displayRecipes(data.meals);
+    } catch (error) {
+        console.error('Error fetching recipes:', error);
+    }
+}
 
+async function fetchData(url) {
+    const response = await fetch(url);
+    return await response.json();
+}
 const searchInput 
 const searchButton
 const clearButton 
