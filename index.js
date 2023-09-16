@@ -75,7 +75,8 @@ function displayRecipes(recipes) {
 
 
 function selectRecipe(recipe) {
-    if (!selectedRecipes.includes(recipe) 
+    if (!selectedRecipes.includes(recipe) && !selectedRecipeList.includes(recipe))
+{
         selectedRecipes.push(recipe);
         displaySelectedRecipes();
         displayIngredients(recipe);
@@ -92,10 +93,52 @@ function displaySelectedRecipes() {
 
 // Function to fetch and display ingredients for each recipe
 
-// Function to extract the ingredients from the recipe object
-// Change to array iterator method
+async function displayIngredients(recipe) {
+    try {
+        const data = await fetchData(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${recipe.idMeal}`);
+        const ingredients = getIngredientsList(data.meals[0]);
+        displayIngredientsList(ingredients);
+    } catch (error) {
+        console.error('Error fetching ingredients:', error);
+    }
+}
 
+// Function to extract the ingredients from the recipe object
+
+function getIngredientsList(recipe) {
+    const ingredients = []; // Ingredients array
+    for (let i = 1; i <= 20; i++) {
+        const ingredient = recipe[`strIngredient${i}`];
+        const measure = recipe[`strMeasure${i}`];
+        if (ingredient && ingredient.trim() !== '') {
+            ingredients.push(`${measure} ${ingredient}`);
+        } else {
+            break; 
+        }
+    }
+    return ingredients;
+}
 // Functions to create and display the list of ingredients per recipe
+
+function createIngredientList(ingredient) {
+    const ingredientItem = document.createElement('li');
+    ingredientItem.textContent = ingredient;
+    ingredientItem.addEventListener('click', () => {
+        addToShoppingList(ingredient); // Adds Ingredient to Shopping list
+    });
+    return ingredientItem;
+}
+
+function displayIngredientsList(ingredients) {
+    ingredientList.innerHTML = '';
+    if (ingredients.length > 0) {
+        ingredients.forEach((ingredient) => {
+            const ingredientItem = createIngredientList(ingredient);
+            ingredientList.appendChild(ingredientItem);
+        });
+    } 
+}
+
 
 // Function to add selected ingredients to the shopping list
 
