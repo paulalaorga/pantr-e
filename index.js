@@ -14,14 +14,16 @@ async function fetchData(url) {
     const response = await fetch(url);
     return await response.json();
 }
-const searchInput 
-const searchButton
-const clearButton 
 
-const recipeList 
-const selectedRecipeList 
-const ingredientList 
-const shoppingList 
+
+const searchInput = document.getElementById('searchInput');
+const searchButton = document.getElementById('searchButton');
+const clearButton = document.getElementById('clearButton');
+
+const recipeList = document.getElementById('recipeList');
+const selectedRecipeList = document.getElementById('selectedRecipeList');
+const ingredientList = document.getElementById('ingredientList');
+const shoppingList = document.getElementById('shoppingList');
 
 
 const selectedRecipes = []; // My Menu array
