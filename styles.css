@@ -26,16 +26,20 @@ h1 {
     grid-template-rows: auto auto;
     grid-column-gap: 10px;
     grid-row-gap: 10px;
+    align-content: center;
 }
 
 .search-container {
-    display: flex;
+    display: block;
     justify-content: center;
     align-items: center;
     margin-bottom: 20px;
     grid-column-start: 1;
     grid-column-end: 3;
     grid-row: 1;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    align-content: center;
 }
 
 #searchInput {
@@ -45,9 +49,10 @@ h1 {
     border-radius: 5px;
     font: inherit;
     font-family: monospace;
+    text-align: left;
 }
 
-button {
+#searchButton {
     padding: 10px 20px;
     margin-left: 10px;
     background-color: rgb(22, 9, 9);;
@@ -58,7 +63,7 @@ button {
     font: inherit;
 }
 
-button2 {
+#clearButton {
     padding: 10px 20px;
     margin-left: 10px;
     color:  rgb(22, 9, 9);
@@ -67,6 +72,7 @@ button2 {
     border-radius: 5px;
     cursor: pointer;
     font: inherit;
+
 }
 
 .recipe-list-container {

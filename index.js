@@ -15,7 +15,7 @@ async function fetchData(url) {
     return await response.json();
 }
 
-
+const searchForm = document.getElementById('searchForm'); // Form element
 const searchInput = document.getElementById('searchInput');
 const searchButton = document.getElementById('searchButton');
 const clearButton = document.getElementById('clearButton');
@@ -29,8 +29,11 @@ const shoppingList = document.getElementById('shoppingList');
 const selectedRecipes = []; // My Menu array
 const shoppingListItems = []; // My Shopping List
 
-// Event listener for the search button and clear button
-searchButton.addEventListener('click',  () => {
+// Event listener for the search form, search button and clear button
+
+searchForm.addEventListener('submit', function (e) {
+   e.preventDefault(); 
+
     const query = searchInput.value.trim();
     if (query !== '') {
         fetchRecipes(query);
@@ -46,11 +49,10 @@ searchInput.addEventListener('keydown', function(event) {
     }
 });
 
-clearButton.addEventListener('click', function() {
-    displayRecipes(), displayIngredientsList() = '';
+clearButton.addEventListener('click', function () {
+    displayRecipes([]);
+    displayIngredientsList([]);
 });
-
-
 
  // Functions to create and display list of recipes
 
