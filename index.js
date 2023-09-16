@@ -30,6 +30,18 @@ const selectedRecipes = []; // My Menu array
 const shoppingListItems = []; // My Shopping List
 
 // Event listener for the search button and clear button
+searchButton.addEventListener('click',  () => {
+    const query = searchInput.value.trim();
+    if (query !== '') {
+        fetchRecipes(query);
+    }
+});
+
+clearButton.addEventListener('click', function() {
+    displayRecipes(), displayIngredientsList() = '';
+});
+
+
 
  // Functions to create and display list of recipes
 
