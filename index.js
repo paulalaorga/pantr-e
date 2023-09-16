@@ -73,6 +73,23 @@ function displayRecipes(recipes) {
 
 // Functions to select and display My Menu
 
+
+function selectRecipe(recipe) {
+    if (!selectedRecipes.includes(recipe) 
+        selectedRecipes.push(recipe);
+        displaySelectedRecipes();
+        displayIngredients(recipe);
+    }
+}
+
+function displaySelectedRecipes() {
+   // selectedRecipeList.innerHTML = '';
+    selectedRecipes.forEach((recipe) => {
+        const selectedRecipeItem = createRecipeList(recipe);
+        selectedRecipeList.appendChild(selectedRecipeItem);
+    });
+}
+
 // Function to fetch and display ingredients for each recipe
 
 // Function to extract the ingredients from the recipe object
