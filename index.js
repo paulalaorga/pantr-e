@@ -37,6 +37,15 @@ searchButton.addEventListener('click',  () => {
     }
 });
 
+searchInput.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+        const query = searchInput.value.trim();
+        if (query !== '') {
+            fetchRecipes(query);
+        }
+    }
+});
+
 clearButton.addEventListener('click', function() {
     displayRecipes(), displayIngredientsList() = '';
 });
