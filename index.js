@@ -75,8 +75,8 @@ function displayRecipes(recipes) {
 
 
 function selectRecipe(recipe) {
-    if (!selectedRecipes.includes(recipe) && !selectedRecipeList.includes(recipe))
-{
+    if (!selectedRecipes.includes(recipe) 
+){
         selectedRecipes.push(recipe);
         displaySelectedRecipes();
         displayIngredients(recipe);
@@ -84,7 +84,7 @@ function selectRecipe(recipe) {
 }
 
 function displaySelectedRecipes() {
-   // selectedRecipeList.innerHTML = '';
+   selectedRecipeList.innerHTML = '';
     selectedRecipes.forEach((recipe) => {
         const selectedRecipeItem = createRecipeList(recipe);
         selectedRecipeList.appendChild(selectedRecipeItem);
@@ -142,4 +142,20 @@ function displayIngredientsList(ingredients) {
 
 // Function to add selected ingredients to the shopping list
 
+function addToShoppingList(ingredient) {
+    if (!shoppingListItems.includes(ingredient)) {
+        shoppingListItems.push(ingredient);
+        displayShoppingList();
+    }
+}
+
 // Function to display the shopping list
+
+function displayShoppingList() {
+    shoppingList.innerHTML = '';
+    shoppingListItems.forEach((item) => {
+        const shoppingListItem = document.createElement('li');
+        shoppingListItem.textContent = item;
+        shoppingList.appendChild(shoppingListItem);
+    });
+}
