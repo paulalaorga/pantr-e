@@ -45,6 +45,23 @@ clearButton.addEventListener('click', function() {
 
  // Functions to create and display list of recipes
 
+ function createRecipeList(recipe) {
+    const recipeItem = document.createElement('li');
+    recipeItem.textContent = recipe.strMeal;
+    recipeItem.addEventListener('click', () => {
+        selectRecipe(recipe);
+    });
+    return recipeItem;
+}
+
+function displayRecipes(recipes) {
+    recipeList.innerHTML = ''; // Clears the list for each input
+        recipes.forEach((recipe) => {
+            const recipeItem = createRecipeList(recipe);
+            recipeList.appendChild(recipeItem);
+        });
+    } 
+
 // Functions to select and display My Menu
 
 // Function to fetch and display ingredients for each recipe
