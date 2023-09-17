@@ -64,12 +64,11 @@ calls the function to display the list and the ingredients
 2- to display the selected recipes:
 Runs a forEach loop on the selectedRecipes array calling a variable for the individual itemsof the list and iterating the function createRecipeList, then append the list item as a child to the selectedRecipeList.
 
-                - Ingredients
-
-- Extract ingredients (properties) from the recipe (objects).
-- Create list 
-- Display list
+- Ingredients
+1 - Extract ingredients (properties) from the recipe (objects).
+2 - Create list 
+3 - Display list
     
-                - Shopping List
-- .push ingredients to the shoppingListItems array
-- .forEach to iterate through the array and append the items to the variable shoppingList.
+- Shopping List
+2 - .push ingredients to the shoppingListItems array
+3 - .forEach to iterate through the array and append the items to the variable shoppingList.
