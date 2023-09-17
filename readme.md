@@ -46,6 +46,7 @@ Project proposal:
     - Functions: 
 
 - Recipe List
+
 1- to create List: 
 It declares the recipeItem variable to create a new list item element by using document.createElement('li').
 It sets the content of the list items  (recipeItem.textContent = recipe.strMeal).
@@ -56,6 +57,7 @@ Finally, it returns the recipe item.
 ForEach loop to iterate through the recipes array, and call the previous function to populate the list by adding the recipes from the array, as children of the previous list.
 
 - Menu
+
 1- to select recipes:
 Checks if the recipe is not already in the selectedRecipes array. 
 Using .push, adds the recipe onject to the array
@@ -65,10 +67,15 @@ calls the function to display the list and the ingredients
 Runs a forEach loop on the selectedRecipes array calling a variable for the individual itemsof the list and iterating the function createRecipeList, then append the list item as a child to the selectedRecipeList.
 
 - Ingredients
+
 1 - Extract ingredients (properties) from the recipe (objects).
+
 2 - Create list 
+
 3 - Display list
     
 - Shopping List
-2 - .push ingredients to the shoppingListItems array
-3 - .forEach to iterate through the array and append the items to the variable shoppingList.
+
+1 - .push ingredients to the shoppingListItems array
+
+2 - .forEach to iterate through the array and append the items to the variable shoppingList.
